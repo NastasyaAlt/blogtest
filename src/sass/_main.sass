@@ -6,9 +6,11 @@
 	margin: auto
 	width: 70%
 	height: 50px
-	margin-top: 20px
+	margin-top: 18px
 	text-transform: none
 	letter-spacing: 1px
+	+r(600)
+		width: 90%
 
 .menu
 	width: 100%
@@ -18,11 +20,18 @@
 	vertical-align: middle
 
 .nav
-	width: 90%
-	text-align: right
+	margin-right: 0
+	width: 89%
 	display: inline-block
 	vertical-align: middle
 	font-family: 'bebas_neueregular', sans-serif
+	+r(1100)
+		width: 80%
+	+r(600)
+		width: 60%
+		margin-left: 20px
+	+r(700)
+		width: 70%
 
 .nav__list
 	float: right
@@ -31,7 +40,7 @@
 	display: inline-block
 
 .link
-	font-size: 1em
+	font-size: 1.25em
 	padding-left: 20px
 	text-decoration: none
 	text-transform: uppercase
@@ -41,21 +50,57 @@
 		color: #e8603c
 		&:active
 			color: #e8603c
+	+r(600)
+		font-size: 1em
 
+.link__post
+	font-family: 'Helvetica', sans-serif
+	font-size: 0.75em
+	text-decoration: none
+	color: #b9b9b9
+	&:hover
+		color: #e8603c
+		&:active
+			color: #e8603c
+
+.link_small
+	font-family: 'Helvetica', sans-serif
+	font-size: 0.75em
+	text-transform: none
+	padding-left: 0
+
+//End header
+
+// CONTENT
 .title
 	width: 100%
 	margin-top: 10px
 	top: 0px
 	display: inline-block
-	height: 60px
 
 .title_width
 	width: 70%
 	height: 60px
 	margin: auto
-	padding-top: 20px
-	padding-left: 25px
+	padding-top: 10px
 	background-color: #e8603c
+	+r(600)
+		width: 100%
+
+.h3
+	font-family: 'bebas_neueregular', sans-serif
+	font-size: 1.75em
+	color: white
+	letter-spacing: 1px
+
+.h3_indent
+	padding-left: 25px
+
+.h3_orange
+	color: #e8603c
+
+.h3_inline
+	display: inline-block
 
 .back__left
 	width: 14%
@@ -63,6 +108,8 @@
 	height: 60px
 	background-color: #f3af9d
 	display: inline-block
+	+r(600)
+		display: none
 
 .back__right
 	width: 14%
@@ -70,29 +117,29 @@
 	height: 60px
 	background-color: #f3af9d
 	display: inline-block
-
-.h3
-	font-family: 'bebas_neueregular', sans-serif
-	color: white
-	letter-spacing: 1px
-
-//End header
+	+r(600)
+		display: none
 
 //Sidebar
 .sidebar
 	font-family: 'Helvetica', sans-serif
-	margin-top: 15px
-	width: 30%
+	margin-top: 40px
+	width: 23%
 	float: right
 
-.h3_orange
+.h4
+	font-family: 'bebas_neueregular', sans-serif
+	color: white
+	letter-spacing: 1px
+
+.h4_orange
 	color: #e8603c
 
-.h3_inline
+.h4_inline
 	display: inline-block
-	
+
 .sidebar__section
-	width: 50%
+	width: 100%
 
 .section
 	text-align: left
@@ -105,16 +152,22 @@
 .side__separator
 	display: inline-block
 	height: 15px
-	width: 45%
+	width: 55%
 	float: right
 	background-image: url(/img/backg.png) 
 	background-repeat: repeat-y repeat-x
+	+r(1100)
+		width: 30%
+	+r(800)
+		display: none
 
 .about
 	font-size: 0.75em
 
 .block_indent
 	margin-top: 10px
+	margin-bottom: 50px
+	line-height: 1.2
 
 .categories__link
 	text-decoration: none
@@ -123,8 +176,8 @@
 	&:hover
 		color: #e8603c
 
-.h3_orange
-	color: #e8603c
+.block_height
+	line-height: 1
 
 .photo
 	display: inline-block
@@ -139,41 +192,66 @@
 // Blog
 
 .blog
-	margin-top: 25px
-	width: 70%
+	margin-top: 50px
+	width: 77%
 
 .post
-	width: 75%
-	margin-right: 50px
-	float: right
+	width: 93%
+	+r(600)
+		width: 95%
+		margin-left: auto
 
 .icon
 	height: 75px
 	vertical-align: top
-	display: inline-block
-
+	margin-left: -90px
+	float: left
 
 .icon__img
 	width: 75px
 	height: 75px
-	margin-left: -75px
+	+r(600)
+		display: none
 
 .slider
-	margin-top: -75px
-	vertical-align: top
 	display: inline-block
-	margin-left: 10px
-	height: 300px
+	vertical-align: top
+	+r(600)
+		width: 95%
+
+.slick-prev,
+.slick-next 
+	position: absolute
+	display: block
+	width: 36px
+	height: 52px
+	line-height: 0px
+	font-size: 0px
+	cursor: pointer
+	top: 50%
+	-webkit-transform: translate(0, -50%)
+	-ms-transform: translate(0, -50%)
+	transform: translate(0, -50%)
+	padding: 0
+	border: none
+	outline: none
+	&:hover, &:focus 
+		opacity: 0.5
+
+
+.slick-prev 
+	left: 25px
+	z-index: 99999
+	background-image: url(/img/arr/prev.png)
+
+.slick-next 
+	right: 25px
+	z-index: 99999
+	background-image: url(/img/arr/next.png)
 
 .slider__img
 	width: 100%
 
-.post__descript
-	width: 90%
-	margin-left: 10%
-	vertical-align: top
-	display: inline-block
-	margin-top: 25px
 
 .icon_svg
 	width: 25px
@@ -183,71 +261,77 @@
 .descript__info
 	width: 20%
 	float: left
+	+r(600)
+		display: none
 
 .h6
+	font-family: 'bebas_neueregular', sans-serif
+	font-size: 1em
 	text-transform: uppercase
 
 .h6_color
 	color: #e8603c
 
-.link_small
-	font-family: 'Helvetica', sans-serif
-	font-size: 0.75em
-	text-transform: none
-	padding: 0px 5px 0px 5px
-
 .descript__text
-	width: 65%
-	margin-left: 25%
-
+	width: 80%
+	margin-left: 22%
+	+r(600)
+		width: 95%
+		margin-left: 0
 
 .descript__text p
 	font-size: 0.75em
-	margin-top: 20px
+	margin-top: 15px
 	text-align: left
 	font-family: 'Helvetica', sans-serif
+	font-style: normal
+
+.h3_orange
+	color: #e8603c
+
+.h3_inline
+	display: inline-block
+
+.h3_size
+	font-size: 1.25em
 
 .separator
-	margin-left: 10%
-	margin-top: 5%
-	margin-bottom: 5%
+	margin-top: 7%
+	margin-bottom: 7%
 	height: 15px
-	width: 83%
+	width: 97%
 	background-image: url(/img/backg.png) 
 	background-repeat: repeat-y repeat-x
 
-.post3
-	margin-top: -100px
-	display: inline-block
+
+.post__descript
 	vertical-align: top
-	width: 92%
+	margin-top: 20px
+
+.post__descript p 
+	font-family: 'Helvetica', sans-serif
+	font-size: 0.75em
+	width: 90%
+	display: inline-block
+	line-height: 1.5
+
+.post_indent 
+	margin-top: 0px
+
+.post_style
+	font-style: italic
+
+.post_color
 	background-color: #f5f5f5
-	padding: 20px 0px 20px 0px
+	padding: 20px 0px 30px 30px
+	margin-right: 20px
 
 .icon_orange
 	vertical-align: top
 	display: inline-block
-	margin-left: 5%
-
-.post3 p 
-	font-family: 'Helvetica', sans-serif
-	font-style: italic
-	font-size: 0.75em
-	width: 80%
-	margin-left: 2%
-	display: inline-block
-
-.post4
-	margin-top: -100px
-	width: 92%
-
-.post4 p
-	font-family: 'Helvetica', sans-serif
-	font-size: 0.75em
-	margin-top: 20px
+	fill: #e8603c
 
 .page__list	
-	margin-left: 10%
 	display: inline
 
 .page_number
@@ -255,9 +339,10 @@
 	margin-bottom: 5%
 
 .number
+	font-family: 'bebas_neueregular', sans-serif
 	color: #fff
 	text-decoration: none
-	padding: 10px 10px 10px 10px
+	padding: 5px 10px 5px 10px
 	border: solid 1px #f3b29d
 	background-color: #f3b29d
 	&:hover
